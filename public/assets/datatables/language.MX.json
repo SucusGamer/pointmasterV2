@@ -1,0 +1,31 @@
+{
+	"sProcessing":     "Procesando...",
+  "sLengthMenu":     "Mostrar _MENU_ registros",
+  "sZeroRecords":    "No se encontraron resultados",
+  "sEmptyTable":     "Ningún dato disponible en esta tabla",
+  "sInfo":           "Resultados:  _TOTAL_ - Pags.: _PAGE_ / _PAGES_",
+  "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+  "sInfoFiltered":   " - filtrado de _MAX_",
+  "sInfoPostFix":    "",
+  "sSearch":         "Buscar:",
+  "sUrl":            "",
+  "sInfoThousands":  ",",
+  "sLoadingRecords": "Cargando...",
+  "paginate": {
+    "next": ">",
+    "first": "<<",
+    "last": ">>",
+    "previous": "<"
+  },
+  "oAria": {
+      "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+  },
+	"select": {
+		"rows": {
+			"_": "",
+			"0": "",
+			"1": ""
+		}
+	}
+}
