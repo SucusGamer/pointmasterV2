@@ -70,23 +70,23 @@ Route::post('servicio/store', [ServicioController::class, 'store'])->name('servi
 Route::get('servicio/{id}/edit', [ServicioController::class, 'edit'])->name('servicio_edit')->where('id', '[0-9]+');
 Route::post('servicio/{id}/update', [ServicioController::class, 'update'])->name('servicio_update')->where('id', '[0-9]+');
 
-Route::get('marca', [MarcaController::class, 'index'])->name('marca_index')->middleware('can:admin.inicio');
+Route::get('categoria', [MarcaController::class, 'index'])->name('marca_index')->middleware('can:admin.inicio');
 
-Route::get('marca/create', [MarcaController::class, 'create'])->name('marca_create');
-Route::post('marca/store', [MarcaController::class, 'store'])->name('marca_store');
+Route::get('categoria/create', [MarcaController::class, 'create'])->name('marca_create');
+Route::post('categoria/store', [MarcaController::class, 'store'])->name('marca_store');
 
-Route::get('marca/{id}/edit', [MarcaController::class, 'edit'])->name('marca_edit')->where('id', '[0-9]+');
-Route::post('marca/{id}/update', [MarcaController::class, 'update'])->name('marca_update')->where('id', '[0-9]+');
+Route::get('categoria/{id}/edit', [MarcaController::class, 'edit'])->name('marca_edit')->where('id', '[0-9]+');
+Route::post('categoria/{id}/update', [MarcaController::class, 'update'])->name('marca_update')->where('id', '[0-9]+');
 
 
 //tipovehiculo
-Route::get('tipovehiculo', [TipoVehiculoController::class, 'index'])->name('tipovehiculo_index');
+Route::get('familia', [TipoVehiculoController::class, 'index'])->name('tipovehiculo_index');
 
-Route::get('tipovehiculo/create', [TipoVehiculoController::class, 'create'])->name('tipovehiculo_create');
-Route::post('tipovehiculo/store', [TipoVehiculoController::class, 'store'])->name('tipovehiculo_store');
+Route::get('familia/create', [TipoVehiculoController::class, 'create'])->name('tipovehiculo_create');
+Route::post('familia/store', [TipoVehiculoController::class, 'store'])->name('tipovehiculo_store');
 
-Route::get('tipovehiculo/{id}/edit', [TipoVehiculoController::class, 'edit'])->name('tipovehiculo_edit')->where('id', '[0-9]+');
-Route::post('tipovehiculo/{id}/update', [TipoVehiculoController::class, 'update'])->name('tipovehiculo_update')->where('id', '[0-9]+');
+Route::get('familia/{id}/edit', [TipoVehiculoController::class, 'edit'])->name('tipovehiculo_edit')->where('id', '[0-9]+');
+Route::post('familia/{id}/update', [TipoVehiculoController::class, 'update'])->name('tipovehiculo_update')->where('id', '[0-9]+');
 
 //numerorin
 Route::get('numerorin', [NumeroRinController::class, 'index'])->name('numerorin_index');
@@ -106,13 +106,13 @@ Route::get('/tienda', [LlantaController::class, 'llantaweb'])->name('llantaweb')
 Route::get('/productospormarca', [LlantaController::class, 'productospormarca'])->name('productospormarca');
 
 
-Route::get('llanta', [LlantaController::class, 'index'])->name('llanta_index')->middleware('auth');
+Route::get('producto', [LlantaController::class, 'index'])->name('llanta_index')->middleware('auth');
 
-Route::get('llanta/create', [LlantaController::class, 'create'])->name('llanta_create');
-Route::post('llanta/store', [LlantaController::class, 'store'])->name('llanta_store');
+Route::get('producto/create', [LlantaController::class, 'create'])->name('llanta_create');
+Route::post('producto/store', [LlantaController::class, 'store'])->name('llanta_store');
 
-Route::get('llanta/{id}/edit', [LlantaController::class, 'edit'])->name('llanta_edit')->where('id', '[0-9]+');
-Route::post('llanta/{id}/update', [LlantaController::class, 'update'])->name('llanta_update')->where('id', '[0-9]+');
+Route::get('producto/{id}/edit', [LlantaController::class, 'edit'])->name('llanta_edit')->where('id', '[0-9]+');
+Route::post('producto/{id}/update', [LlantaController::class, 'update'])->name('llanta_update')->where('id', '[0-9]+');
 
 Route::get('/listar_areas', [LlantaController::class, 'listar_areas'])->name('listar_areas');
 Route::get('/cargarfamilias', [LlantaController::class, 'cargarfamilias'])->name('cargarfamilias');
@@ -150,13 +150,13 @@ Route::post('/guardarcontacto', [ContactoController::class, 'guardarcontacto'])-
 Route::post('/contactovisto', [ContactoController::class, 'contactovisto'])->name('contactovisto');
 
 //dimension
-Route::get('dimension', [DimensionController::class, 'index'])->name('dimension_index')->middleware('auth');
+Route::get('grupo', [DimensionController::class, 'index'])->name('dimension_index')->middleware('auth');
 
-Route::get('dimension/create', [DimensionController::class, 'create'])->name('dimension_create');
-Route::post('dimension/store', [DimensionController::class, 'store'])->name('dimension_store');
+Route::get('grupo/create', [DimensionController::class, 'create'])->name('dimension_create');
+Route::post('grupo/store', [DimensionController::class, 'store'])->name('dimension_store');
 
-Route::get('dimension/{id}/edit', [DimensionController::class, 'edit'])->name('dimension_edit')->where('id', '[0-9]+');
-Route::post('dimension/{id}/update', [DimensionController::class, 'update'])->name('dimension_update')->where('id', '[0-9]+');
+Route::get('grupo/{id}/edit', [DimensionController::class, 'edit'])->name('dimension_edit')->where('id', '[0-9]+');
+Route::post('grupo/{id}/update', [DimensionController::class, 'update'])->name('dimension_update')->where('id', '[0-9]+');
 
 Route::middleware([
     'auth:sanctum',

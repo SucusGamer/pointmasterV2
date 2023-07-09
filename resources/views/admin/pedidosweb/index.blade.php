@@ -21,7 +21,7 @@
 
 @section('content')
     <table id="servicios" class="table table-striped shadow-lg mt-4" style="width:100%">
-        <thead class=" text-white" style="background-color: rgb(190, 131, 21)">
+        <thead class="bg-primary text-white">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
@@ -41,9 +41,10 @@
                             {{ $pedidoswebs->email }} <br> {{ $pedidoswebs->celular }}
                         </td>
                         <td>
-                            <a class="btn showpropedido" data-pedidoid="{{$pedidoswebs->id}}" type="button" style="background-color: rgb(190, 131, 21); color: white;" data-toggle="modal" data-target="#staticBackdrop">Ver <i class="fa fa-eye" aria-hidden="true"></i>
+                            <a class="btn showpropedido" data-pedidoid="{{$pedidoswebs->id}}" type="button" style="background-color: #428bca; color: white;" data-toggle="modal" data-target="#staticBackdrop">Ver <i class="fa fa-eye" aria-hidden="true"></i>
                             </a>
                         </td>
+
                         <td>$ {{ $pedidoswebs->total }}</td>
                         <td>
                             @if ($pedidoswebs->ventahecha == 0)

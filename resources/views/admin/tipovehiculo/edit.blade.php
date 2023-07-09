@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6">
             <h1>
-                Editar Tipo de Vehiculo
+                Editar Familia
             </h1>
         </div>
         <div class="col-md-6 text-right">
@@ -25,7 +25,7 @@
         <div style="margin: 3%;">
 
             <div class="mb-3">
-                <label for="txtNomVehiculo" class="form-label">Nombre de la Marca</label>
+                <label for="txtNomVehiculo" class="form-label">Nombre de la familia</label>
                 <input type="text" class="form-control" id="txtNomVehiculo" name="txtNomVehiculo" value="{{ old('txtNomVehiculo', $vehiculo->vehiculo) }}">
             </div>
           

@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6">
             <h1>
-                Crear un tipo de vehiculo
+                Crear familia
             </h1>
         </div>
         <div class="col-md-6 text-right">
@@ -25,8 +25,8 @@
         <div style="margin: 3%;">
             
             <div class="mb-3">
-                <label for="txtNomVehiculo" class="form-label">Nombre del Tipo de Vehiculo</label>
-                <input type="text" class="form-control" id="txtNomVehiculo" name="txtNomVehiculo" placeholder="Escribe el nombre del Tipo de Vehiculo">
+                <label for="txtNomVehiculo" class="form-label">Nombre de la Familia</label>
+                <input type="text" class="form-control" id="txtNomVehiculo" name="txtNomVehiculo" placeholder="Escribe el nombre de la familia">
             </div>
             <div class="mb-3">
                 <label for="chkActivo" class="mb-3 control-label">Activo</label>

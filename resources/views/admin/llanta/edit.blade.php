@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Llanta')
+@section('title', 'Editar Producto')
 
 
 @can('admin.inicio')
@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-6">
             <h1>
-                Editar una Llanta
+                Editar un Producto
             </h1>
         </div>
         <div class="col-md-6 text-right">
@@ -26,31 +26,30 @@
     <form action="{{ route('llanta_update', ['id' => $llanta->id]) }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div style="margin: 3%;">
-            <div class="mb-3">
-                <label for="txtFile" class="mb-3 control-label">Imagen</label>
-                <div class="mb-3">
-                    @if ($llanta->imagen <> "")
-                        <img src="{{ ('/img/llantas')."/".$llanta->imagen }}"  alt="" class="img-fluid img-thumbnail">    
-                    @endif
-                    <input type="file" class="form-control" id="txtFile" name="txtFile" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff" >
-                </div>
-            </div>
 
             <div class="mb-3">
                 <label for="txtNomLlanta" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="txtNomLlanta" name="txtNomLlanta" value="{{ old('txtNomLlanta', $llanta->nombrellanta) }}">
             </div>
             <div class="mb-3">
-                <label for="txtNomMarca" class="form-label">Marca</label>
+                <label for="txtNomMarca" class="form-label">Categoría</label>
                 <select class="txtNomMarca" style="width: 100%!important; " name="txtNomMarca">
                     @foreach ($marca as $marcas)
                         <option value="{{$marcas->id}}" @if ($llanta->marca_id == $marcas->id) selected="" @endif>{{$marcas->nombremarca}}</option>
                     @endforeach
                 </select>            
             </div>
+            <div class="mb-3">
+                <label for="txtNomFamilia" class="form-label">Familia</label>
+                <select class="txtNomFamilia" style="width: 100%!important; " name="txtNomFamilia">
+                    @foreach ($familia as $familias)
+                        <option value="{{$familias->id}}" @if ($llanta->familia_id == $familias->id) selected="" @endif>{{$familias->vehiculo}}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="mb-3">
-                <label for="txtNumRim" class="form-label">Dimension de Llanta</label>
+                <label for="txtNumRim" class="form-label">Grupo</label>
                 <select class="txtNumRim" style="width: 100%!important; " name="txtNumRim">
                     @foreach ($dimension as $dimensions)
                         <option value="{{$dimensions->id}}" @if ($llanta->dimension_id == $dimensions->id) selected="" @endif>{{$dimensions->dimension}}</option>
@@ -72,8 +71,16 @@
             <div class="mb-3">
                 <label for="chkActivo" class="mb-3 control-label">Activo</label>
                 <div class="mb-3">
-                    <input type="checkbox" class="form-controlww" id="chkActivo" name="chkActivo" value="1"@if($llanta->activo == 1) checked="checked"                        
-                    @endif>
+                    <input type="checkbox" class="form-controlww" id="chkActivo" name="chkActivo" value="1"@if($llanta->activo == 1) checked @endif>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="txtFile" class="mb-3 control-label">Imagen</label>
+                <div class="mb-3">
+                    @if ($llanta->imagen <> "")
+                        <img src="{{ ('/img/llantas')."/".$llanta->imagen }}"  alt="" class="img-fluid img-thumbnail" style="width: 200px;"> 
+                    @endif
+                    <input type="file" class="form-control" id="txtFile" name="txtFile" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff" >
                 </div>
             </div>
         </div>
@@ -199,3 +206,4 @@
     });
 </script>
 @stop
+@endcan

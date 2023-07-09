@@ -91,11 +91,6 @@
                 <div class="col-4">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1863.175449322998!2d-89.6187474555725!3d20.938419000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5672270a784baf%3A0x764b40010695f0d9!2sUniversidad%20Tecnol%C3%B3gica%20Metropolitana!5e0!3m2!1ses!2smx!4v1688018322381!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="col-2">
-                    <div class="sofa-img" style="margin-top: 5.5%">
-                        <div class="loader"></div>
-                    </div>
-                </div>
             </div>
         </div>
 

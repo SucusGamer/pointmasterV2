@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6">
             <h1>
-                Crear una Llanta
+                Crear Producto
             </h1>
         </div>
         <div class="col-md-6 text-right">
@@ -24,26 +24,28 @@
         {{ csrf_field() }}
         <div style="margin: 3%;">
             <div class="mb-3">
-                <label for="txtFile" class="mb-3 control-label">Imagen</label>
-                <div class="mb-3">
-                    <input type="file" class="form-control" id="txtFile" name="txtFile" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
-                </div>
-            </div>
-            <div class="mb-3">
                 <label for="txtNomLlanta" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="txtNomLlanta" name="txtNomLlanta" placeholder="Escribe el nombre de la llanta">
+                <input type="text" class="form-control" id="txtNomLlanta" name="txtNomLlanta" placeholder="Escribe el nombre del producto">
             </div>
             <div class="mb-3">
-                <label for="txtNomMarca" class="form-label">Marca</label>
+                <label for="txtNomMarca" class="form-label">Categoría</label>
                 <select class="txtNomMarca" style="width: 100%!important; " name="txtNomMarca">
                     @foreach ($marca as $marcas)
                         <option value="{{$marcas->id}}">{{$marcas->nombremarca}}</option>
                     @endforeach
                 </select>            
             </div>
+            <div class="mb-3">
+                <label for="txtNomFamilia" class="form-label">Familia</label>
+                <select class="txtNomFamilia" style="width: 100%!important; " name="txtNomFamilia">
+                    @foreach ($familia as $familias)
+                        <option value="{{$familias->id}}">{{$familias->vehiculo}}</option>
+                    @endforeach
+                </select>            
+            </div>
 
             <div class="mb-3">
-                <label for="txtNumRim" class="form-label">Dimension Llanta</label>
+                <label for="txtNumRim" class="form-label">Grupo</label>
                 <select class="txtNumRim" style="width: 100%!important;" name="txtNumRim">
                     @foreach ($dimension as $dimensions)
                         <option value="{{$dimensions->id}}">{{$dimensions->dimension}}</option>
@@ -51,14 +53,15 @@
                 </select>            
             </div>
 
+
             <div class="mb-3">
                 <label for="txtPrecio" class="form-label">Precio</label>
-                <input type="text" class="form-control" id="txtPrecio" name="txtPrecio" placeholder="Escribe el precio de la llanta $">
+                <input type="text" class="form-control" id="txtPrecio" name="txtPrecio" placeholder="Escribe el precio del producto $">
             </div>
 
             <div class="mb-3">
                 <label for="txtDescripcion" class="form-label">Descripcion</label>
-                <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Escribe una breve descipcion sobre la llanta">
+                <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Escribe una breve descipcion sobre el producto">
             </div>
             
             <div class="mb-3">
@@ -72,6 +75,13 @@
                   <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
                   <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
                 </svg>
+            </div>
+
+            <div class="mb-3">
+                <label for="txtFile" class="mb-3 control-label">Imagen</label>
+                <div class="mb-3">
+                    <input type="file" class="form-control" id="txtFile" name="txtFile" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+                </div>
             </div>
 
         </div>
@@ -169,11 +179,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
     $('.txtNomMarca').select2();
-    $('.txtTipoVehiculo').select2();
+    $('.txtNomFamilia').select2();
     $('.txtNumRim').select2();
 });
 </script>
 <script type="text/javascript">
+
     $(function () {
         'use strict';
 
