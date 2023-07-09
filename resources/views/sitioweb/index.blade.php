@@ -154,7 +154,11 @@
 		</div>
 	</div>
 	<!-- End Why Choose Us Section --> --}}
-
+	<div class="col-2">
+		<div class="sofa-img" style="margin-top: 5.5%">
+			<div class="loader"></div>
+		</div>
+	</div>
 	@include('sitioweb.footer.foot')
 
 

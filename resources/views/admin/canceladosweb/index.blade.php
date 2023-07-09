@@ -12,7 +12,7 @@
 
 @section('content')
     <table id="servicios" class="table table-striped shadow-lg mt-4" style="width:100%">
-        <thead class=" text-white" style="background-color: rgb(190, 131, 21)">
+        <thead class="bg-primary text-white">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>

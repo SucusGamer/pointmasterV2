@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar una Dimension')
+@section('title', 'Editar Grupo')
 
 
 @section('content_header')
@@ -10,11 +10,11 @@
         <div class="row">
             <div class="col-md-6">
                 <h1>
-                    Editar una Dimension
+                    Editar un grupo para los productos
                 </h1>
             </div>
             <div class="col-md-6 text-right">
-                <a class="btn" style=" background-color: rgb(190, 131, 21); color: white;" href="{{ route('dimension_index') }}">Regresar <i class="fas fa-reply"></i></a>
+                <a class="btn btn-primary" href="{{ route('dimension_index') }}">Regresar <i class="fas fa-reply"></i></a>
             </div>
         </div>
     </div>
@@ -31,14 +31,14 @@
                 <input type="text" class="form-control" id="txtNomLlanta" name="txtNomLlanta" value="{{ old('txtNomLlanta', $dimension->dimension) }}">
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="txtNumRim" class="form-label">Numero de Rin</label>
                 <select class="txtNumRim" style="width: 100%!important; " name="txtNumRim">
                     @foreach ($numerorin as $numerorins)
                         <option value="{{$numerorins->id}}" @if ($dimension->numrin_id == $numerorins->id) selected="" @endif>{{$numerorins->numrin}}</option>
                     @endforeach
                 </select>            
-            </div>
+            </div> --}}
           
             <div class="mb-3">
                 <label for="chkActivo" class="mb-3 control-label">Activo</label>
@@ -53,13 +53,13 @@
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
                 <a type="button" class="btn btn-secondary" href="{{ route('dimension_index') }}"><i class="fa fa-close"></i> Cancelar</a>
-                <button type="submit" class="btn" style="background-color: rgb(190, 131, 21); color: white;"><i class="fas fa-upload"></i> Actualizar</button>
+                <button type="submit" class="btn btn-success"><i class="fas fa-upload"></i> Actualizar</button>
             </div>
         </div>  
 
     </form>
 @stop
-@endcan
+{{-- @endcan --}}
 @section('css')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @stop

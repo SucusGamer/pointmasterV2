@@ -8,11 +8,12 @@
     <div class="row">
         <div class="col-md-6">
             <h1>
-                Crear una Marca
+                Crear Categoría
             </h1>
         </div>
         <div class="col-md-6 text-right">
-            <a class="btn" style="background-color: rgb(190, 131, 21); color: white;" href="{{ route('marca_index') }}">Regresar <i class="fas fa-reply"></i></a>
+            <a class="btn btn-primary" style="background-color: #FFA500; border-color: #FFA500; color: white;" href="{{ route('marca_index') }}">Regresar <i class="fas fa-reply"></i></a>
+
         </div>
     </div>
 </div>
@@ -26,14 +27,8 @@
         {{ csrf_field() }}
         <div style="margin: 3%;">
             <div class="mb-3">
-                <label for="txtFile" class="mb-3 control-label">Imagen</label>
-                <div class="mb-3">
-                    <input type="file" class="form-control" id="txtFile" name="txtFile" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="txtNomMarca" class="form-label">Nombre de la Marca</label>
-                <input type="text" class="form-control" id="txtNomMarca" name="txtNomMarca" placeholder="Escribe el nombre de la marca">
+                <label for="txtNomMarca" class="form-label">Nombre de la Categoría</label>
+                <input type="text" class="form-control" id="txtNomMarca" name="txtNomMarca" placeholder="Escribe el nombre de la categoría">
             </div>
             <div class="mb-3">
                 <label for="chkActivo" class="mb-3 control-label">Activo</label>
@@ -47,7 +42,8 @@
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
                 <a type="button" class="btn btn-secondary" href="{{ route('marca_index') }}"><i class="fa fa-close"></i> Cancelar</a>
-                <button type="submit" class="btn" style="background-color: rgb(190, 131, 21); color: white;"><i class="fa fa-save"></i> Crear</button>
+                <button type="submit" class="btn" style="background-color: #90EE90; color: white;"><i class="fa fa-save"></i> Crear</button>
+
             </div>
         </div>  
 

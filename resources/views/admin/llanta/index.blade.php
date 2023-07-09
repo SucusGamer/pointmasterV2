@@ -8,11 +8,12 @@
     <div class="row">
         <div class="col-md-6">
             <h1>
-                Llantas
+                Productos
             </h1>
         </div>
         <div class="col-md-6 text-right">
-            <a class="btn" style="background-color: rgb(190, 131, 21); color: white;" href="{{ route('llanta_create') }}">Nuevo <i class="fas fa-plus"></i></a>
+            <a class="btn btn-primary" style="background-color: #FFA500; border-color: #FFA500;" href="{{ route('llanta_create') }}">Nuevo <i class="fas fa-plus"></i></a>
+
         </div>
     </div>
 </div>
@@ -20,32 +21,35 @@
 @stop
 
 @section('content')
-    <table id="servicios" class="table table-striped shadow-lg mt-4" style="width:100%">
-        <thead class=" text-white" style="background-color: rgb(190, 131, 21)">
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Llanta</th>
-                <th scope="col">Estatus</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-            <tbody>
-                @foreach ($llanta as $llantas)
-                    <tr>
-                        <td>{{ $llantas->id }}</td>
-                        <td>{{ $llantas->nombrellanta }}</td>
-                        <td>
-                            @if ($llantas->activo == 1)
-                                <a><li class="fas fa-toggle-on">Activo</li></a>
-                            @else
-                                <a> <li class="fas fa-toggle-off">Inactivo</li></a>
-                            @endif
-                        </td>
-                        <td><a class="btn" style="background-color: rgb(190, 131, 21); color: white;" title="Editar" href="{{ route('llanta_edit', ['id' => $llantas->id]) }}"><i class="fas fa-edit"></i></a></td>
-                    </tr>
-                @endforeach
-            </tbody>
-    </table>
+<table id="servicios" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
+    <thead class="bg-primary text-white">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Estatus</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($llanta as $llantas)
+        <tr>
+            <td>{{ $llantas->id }}</td>
+            <td>{{ $llantas->nombrellanta }}</td>
+            <td>
+                @if ($llantas->activo == 1)
+                <span class="badge badge-success"><i class="fas fa-toggle-on"></i> Activo</span>
+                @else
+                <span class="badge badge-danger"><i class="fas fa-toggle-off"></i> Inactivo</span>
+                @endif
+            </td>
+            <td>
+                <a class="btn btn-primary" title="Editar" href="{{ route('llanta_edit', ['id' => $llantas->id]) }}"><i class="fas fa-edit"></i></a>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
 @stop
 
 @section('css')

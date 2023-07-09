@@ -89,7 +89,6 @@ class LlantaController extends Controller
             ->where('tipovehiculo_id','LIKE','%'.$buscarporvehiculo.'%')  //Así que me hice otras variables
             ->get();
         $dimensiones = Dimension::where('activo', 1)
-        ->where('numrin_id','LIKE','%'.$buscarporrin.'%')  //Así que me hice otras variables
         ->get();
 
             $llantas = Llanta::where('activo', 1)
@@ -97,6 +96,7 @@ class LlantaController extends Controller
             ->where('marca_id','LIKE','%'.$buscarpormarca.'%')
             ->where('dimension_id','LIKE','%'.$buscarpordimension.'%')
             ->get();
+            // dd($llantas);
 
 
         $marca = Marca::where('activo', 1)->get();
@@ -131,8 +131,10 @@ class LlantaController extends Controller
     {
         $marca = Marca::where('activo', 1)->get();
         $dimension = Dimension::where('activo', 1)->get();
+         $familia = TipoVehiculo::where('activo', 1)->get();
+        //  dd($familia);
 
-        return view('admin.llanta.create', compact('marca', 'dimension'));
+        return view('admin.llanta.create', compact('marca', 'dimension', 'familia'));
     }
 
     public function productospormarca(Request $request, Marca $id)
@@ -154,14 +156,16 @@ class LlantaController extends Controller
         $llanta->nombrellanta = $request['txtNomLlanta'];
         $llanta->marca_id = $request['txtNomMarca'];
         $llanta->dimension_id = $request['txtNumRim'];
+        $llanta->familia_id = $request['txtNomFamilia'];
         $llanta->precio = $request['txtPrecio'];
         $llanta->descripcion = $request['txtDescripcion'];
 
 
         $llanta->activo = $request['chkActivo'] ? $request['chkActivo'] : 0;
+        // dd($llanta);
 
         if($llanta->save()){
-            return redirect()->route('llanta_index')->with('succes', 'Registro Creado satisfactoriamente');
+            return redirect()->route('llanta_index')->with('success', 'Registro Creado satisfactoriamente');
         }else{
             return redirect()->route('llanta_create');
         }
@@ -172,10 +176,10 @@ class LlantaController extends Controller
         $llanta = Llanta::find($id);
 
         $marca = Marca::where('activo', 1)->get();
-        $tipovehiculo = TipoVehiculo::where('activo', 1)->get();
+        $familia = TipoVehiculo::where('activo', 1)->get();
         $dimension = Dimension::where('activo', 1)->get();
 
-        return view('admin.llanta.edit', compact('llanta', 'marca', 'dimension'));
+        return view('admin.llanta.edit', compact('llanta', 'marca', 'dimension', 'familia'));
     }
 
     public function update(Request $request, Llanta $llanta, $id)
@@ -191,8 +195,10 @@ class LlantaController extends Controller
         $bd->nombrellanta = $request['txtNomLlanta'];
         $bd->marca_id = $request['txtNomMarca'];
         $bd->dimension_id = $request['txtNumRim'];
+        $bd->familia_id = $request['txtNomFamilia'];
         $bd->precio = $request['txtPrecio'];
         $bd->descripcion = $request['txtDescripcion'];
+        // dd($bd);
 
         $bd->activo = $request['chkActivo'] ? $request['chkActivo'] : 0;
         if($bd->save()){

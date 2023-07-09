@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear una Dimension de Llanta')
+@section('title', 'Crear Grupo')
 
 @can('admin.inicio')
 
@@ -9,11 +9,11 @@
         <div class="row">
             <div class="col-md-6">
                 <h1>
-                    Crear una Dimension de Llanta
+                    Crear un grupo para los productos
                 </h1>
             </div>
             <div class="col-md-6 text-right">
-                <a class="btn" style=" background-color: rgb(190, 131, 21); color: white;" href="{{ route('dimension_index') }}">Regresar <i class="fas fa-reply"></i></a>
+                <a class="btn btn-primary" style="background-color: #FFA500; border-color: #FFA500; color: white;" href="{{ route('dimension_index') }}">Regresar <i class="fas fa-reply"></i></a>
             </div>
         </div>
     </div>
@@ -25,18 +25,18 @@
         {{ csrf_field() }}
         <div style="margin: 3%;">
             <div class="mb-3">
-                <label for="txtNomLlanta" class="form-label">Dimension Llanta</label>
-                <input type="text" class="form-control" id="txtNomLlanta" name="txtNomLlanta" placeholder="Escribe la dimension de la llanta">
+                <label for="txtNomLlanta" class="form-label">Grupo</label>
+                <input type="text" class="form-control" id="txtNomLlanta" name="txtNomLlanta" placeholder="Escribe el grupo">
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="txtNumRim" class="form-label">Numero de Rin</label>
                 <select class="txtNumRim" style="width: 100%!important; " name="txtNumRim">
                     @foreach ($numerorin as $numerorins)
                         <option value="{{$numerorins->id}}">{{$numerorins->numrin}}</option>
                     @endforeach
                 </select>            
-            </div>
+            </div> --}}
             
             <div class="mb-3">
                 <label for="chkActivo" class="mb-3 control-label">Activo</label>
